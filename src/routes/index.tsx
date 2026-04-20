@@ -9,9 +9,20 @@ import { Button } from "#/components/ui/button";
 import { Input } from "#/components/ui/input";
 import { Label } from "#/components/ui/label";
 import { getAuthState } from "#/functions/auth";
+import { appPath } from "#/lib/app-url";
+import {
+	isGitHubPagesBuild,
+	readPagesAuth,
+	setPagesAuth,
+	verifyPagesPassword,
+} from "#/lib/gh-pages";
 
 export const Route = createFileRoute("/")({
 	beforeLoad: async () => {
+		if (isGitHubPagesBuild()) {
+			if (readPagesAuth()) throw redirect({ to: "/workouts" });
+			return;
+		}
 		const { authenticated } = await getAuthState();
 		if (authenticated) throw redirect({ to: "/workouts" });
 	},
@@ -30,7 +41,17 @@ function LoginPage() {
 		setError(null);
 		setPending(true);
 		try {
-			const res = await fetch("/api/auth/login", {
+			if (isGitHubPagesBuild()) {
+				if (!verifyPagesPassword(password)) {
+					setError("Wrong password");
+					return;
+				}
+				setPagesAuth();
+				await router.invalidate();
+				await navigate({ to: "/workouts" });
+				return;
+			}
+			const res = await fetch(appPath("/api/auth/login"), {
 				method: "POST",
 				headers: { "content-type": "application/json" },
 				credentials: "include",

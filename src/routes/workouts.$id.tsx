@@ -16,6 +16,7 @@ import {
 } from "#/components/ui/progress";
 import { getAuthState } from "#/functions/auth";
 import { getWorkouts } from "#/functions/workouts";
+import { isGitHubPagesBuild, readPagesAuth } from "#/lib/gh-pages";
 import {
 	allExerciseIds,
 	localDateKey,
@@ -25,13 +26,25 @@ import {
 	writeProgress,
 } from "#/lib/progress-storage";
 import { cn } from "#/lib/utils";
+import type { Workout } from "#/lib/workout-types";
+import workoutsJson from "../../data/workouts.json";
 
 export const Route = createFileRoute("/workouts/$id")({
 	beforeLoad: async () => {
+		if (isGitHubPagesBuild()) {
+			if (!readPagesAuth()) throw redirect({ to: "/" });
+			return;
+		}
 		const { authenticated } = await getAuthState();
 		if (!authenticated) throw redirect({ to: "/" });
 	},
 	loader: async ({ params }) => {
+		if (isGitHubPagesBuild()) {
+			const list = workoutsJson as Workout[];
+			const workout = list.find((w) => w.id === params.id);
+			if (!workout) throw notFound();
+			return workout;
+		}
 		const data = await getWorkouts();
 		if (!data.ok) throw redirect({ to: "/" });
 		const workout = data.workouts.find((w) => w.id === params.id);

@@ -14,13 +14,28 @@ import {
 } from "#/components/ui/card";
 import { getAuthState } from "#/functions/auth";
 import { getWorkouts } from "#/functions/workouts";
+import { appPath } from "#/lib/app-url";
+import {
+	clearPagesAuth,
+	isGitHubPagesBuild,
+	readPagesAuth,
+} from "#/lib/gh-pages";
+import type { Workout } from "#/lib/workout-types";
+import workoutsJson from "../../data/workouts.json";
 
 export const Route = createFileRoute("/workouts/")({
 	beforeLoad: async () => {
+		if (isGitHubPagesBuild()) {
+			if (!readPagesAuth()) throw redirect({ to: "/" });
+			return;
+		}
 		const { authenticated } = await getAuthState();
 		if (!authenticated) throw redirect({ to: "/" });
 	},
 	loader: async () => {
+		if (isGitHubPagesBuild()) {
+			return workoutsJson as Workout[];
+		}
 		const data = await getWorkouts();
 		if (!data.ok) throw redirect({ to: "/" });
 		return data.workouts;
@@ -33,7 +48,14 @@ function WorkoutsList() {
 	const router = useRouter();
 
 	async function logout() {
-		await fetch("/api/auth/logout", { method: "POST", credentials: "include" });
+		if (isGitHubPagesBuild()) {
+			clearPagesAuth();
+		} else {
+			await fetch(appPath("/api/auth/logout"), {
+				method: "POST",
+				credentials: "include",
+			});
+		}
 		await router.invalidate();
 	}
 
