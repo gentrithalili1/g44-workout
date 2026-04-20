@@ -45,8 +45,14 @@
           },
           {
             "id": "w1-e7",
-            "name": "Hanging Knee Raises",
-            "sets": "3×12–15",
+            "name": "Ab Wheel Rollouts",
+            "sets": "3×10–12",
+            "rest": "60–90 sec"
+          },
+          {
+            "id": "w1-e8",
+            "name": "Weighted Plank",
+            "sets": "3×45–60s",
             "rest": "60 sec"
           }
         ]
@@ -99,9 +105,15 @@
           },
           {
             "id": "w2-e7",
-            "name": "Plank",
-            "sets": "3×45–60s",
-            "rest": "60 sec"
+            "name": "Flat DB Press",
+            "sets": "3×8–12",
+            "rest": "90–120 sec"
+          },
+          {
+            "id": "w2-e8",
+            "name": "Cable Fly",
+            "sets": "3×12–15",
+            "rest": "60–90 sec"
           }
         ]
       }
@@ -121,7 +133,12 @@
             "sets": "3×6–8",
             "rest": "2–3 min"
           },
-          { "id": "w3-e2", "name": "Dips", "sets": "3×8–12", "rest": "2 min" },
+          {
+            "id": "w3-e2",
+            "name": "Dips",
+            "sets": "3×8–12",
+            "rest": "2 min"
+          },
           {
             "id": "w3-e3",
             "name": "Seated Row",
@@ -151,6 +168,12 @@
             "name": "Cable Crunch",
             "sets": "3×12–15",
             "rest": "60 sec"
+          },
+          {
+            "id": "w3-e8",
+            "name": "Back Extension",
+            "sets": "3×10–12",
+            "rest": "60–90 sec"
           }
         ]
       }
