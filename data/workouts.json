@@ -1,0 +1,159 @@
+[
+  {
+    "id": "workout-1",
+    "name": "Workout 1",
+    "days": [
+      {
+        "id": "w1-d1",
+        "title": "Day 1 — Strength + Arms Focus",
+        "exercises": [
+          {
+            "id": "w1-e1",
+            "name": "Squat",
+            "sets": "4×5–6",
+            "rest": "2–3 min"
+          },
+          {
+            "id": "w1-e2",
+            "name": "Bench Press",
+            "sets": "3×6–8",
+            "rest": "2–3 min"
+          },
+          {
+            "id": "w1-e3",
+            "name": "Pull-Ups",
+            "sets": "3×6–10",
+            "rest": "2 min"
+          },
+          {
+            "id": "w1-e4",
+            "name": "DB Shoulder Press",
+            "sets": "3×8–10",
+            "rest": "90–120 sec"
+          },
+          {
+            "id": "w1-e5",
+            "name": "Barbell Curl",
+            "sets": "3×8–10",
+            "rest": "60–90 sec"
+          },
+          {
+            "id": "w1-e6",
+            "name": "Skull Crushers",
+            "sets": "3×8–10",
+            "rest": "60–90 sec"
+          },
+          {
+            "id": "w1-e7",
+            "name": "Hanging Knee Raises",
+            "sets": "3×12–15",
+            "rest": "60 sec"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "workout-2",
+    "name": "Workout 2",
+    "days": [
+      {
+        "id": "w2-d1",
+        "title": "Day 2 — Volume + Pump",
+        "exercises": [
+          {
+            "id": "w2-e1",
+            "name": "Leg Press",
+            "sets": "3×10–12",
+            "rest": "2 min"
+          },
+          {
+            "id": "w2-e2",
+            "name": "Incline DB Press",
+            "sets": "3×8–12",
+            "rest": "90–120 sec"
+          },
+          {
+            "id": "w2-e3",
+            "name": "Lat Pulldown",
+            "sets": "3×8–12",
+            "rest": "90–120 sec"
+          },
+          {
+            "id": "w2-e4",
+            "name": "Lateral Raises",
+            "sets": "3×12–15",
+            "rest": "60 sec"
+          },
+          {
+            "id": "w2-e5",
+            "name": "Incline DB Curl",
+            "sets": "3×10–12",
+            "rest": "60–90 sec"
+          },
+          {
+            "id": "w2-e6",
+            "name": "Rope Pushdown",
+            "sets": "3×10–12",
+            "rest": "60–90 sec"
+          },
+          {
+            "id": "w2-e7",
+            "name": "Plank",
+            "sets": "3×45–60s",
+            "rest": "60 sec"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "workout-3",
+    "name": "Workout 3",
+    "days": [
+      {
+        "id": "w3-d1",
+        "title": "Day 3 — Posterior + Arm Thickness",
+        "exercises": [
+          {
+            "id": "w3-e1",
+            "name": "Romanian Deadlift",
+            "sets": "3×6–8",
+            "rest": "2–3 min"
+          },
+          { "id": "w3-e2", "name": "Dips", "sets": "3×8–12", "rest": "2 min" },
+          {
+            "id": "w3-e3",
+            "name": "Seated Row",
+            "sets": "3×8–12",
+            "rest": "90–120 sec"
+          },
+          {
+            "id": "w3-e4",
+            "name": "Rear Delt Fly",
+            "sets": "3×12–15",
+            "rest": "60–90 sec"
+          },
+          {
+            "id": "w3-e5",
+            "name": "Hammer Curl",
+            "sets": "3×10–12",
+            "rest": "60–90 sec"
+          },
+          {
+            "id": "w3-e6",
+            "name": "Overhead Extension",
+            "sets": "3×10–12",
+            "rest": "60–90 sec"
+          },
+          {
+            "id": "w3-e7",
+            "name": "Cable Crunch",
+            "sets": "3×12–15",
+            "rest": "60 sec"
+          }
+        ]
+      }
+    ]
+  }
+]

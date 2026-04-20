@@ -1,0 +1,9 @@
+{
+	"short_name": "G44",
+	"name": "G44 Workout",
+	"icons": [],
+	"start_url": ".",
+	"display": "standalone",
+	"theme_color": "#0a0a0a",
+	"background_color": "#0a0a0a"
+}
